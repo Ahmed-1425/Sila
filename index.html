@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صلة - منصة التواصل الذكية | Sila - Smart Communication Platform</title>
+    <link rel="icon" type="image/png" href="assets/logo-sila.png">
+    <link rel="apple-touch-icon" href="assets/logo-sila.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-blobs" aria-hidden="true">
+        <div class="pblob p1"></div>
+        <div class="pblob p2"></div>
+        <div class="pblob p3"></div>
+    </div>
+    <!-- Animated Background -->
+    <div class="animated-background">
+        <div class="particles">
+            <div class="particle" style="--delay: 0s; --duration: 8s;"></div>
+            <div class="particle" style="--delay: 1s; --duration: 10s;"></div>
+            <div class="particle" style="--delay: 2s; --duration: 12s;"></div>
+            <div class="particle" style="--delay: 3s; --duration: 9s;"></div>
+            <div class="particle" style="--delay: 4s; --duration: 11s;"></div>
+            <div class="particle" style="--delay: 5s; --duration: 7s;"></div>
+        </div>
+        <div class="floating-elements">
+            <div class="floating-element">🤟</div>
+            <div class="floating-element">👋</div>
+            <div class="floating-element">✌️</div>
+            <div class="floating-element">🤲</div>
+            <div class="floating-element">👌</div>
+            <div class="floating-element">👍</div>
+        </div>
+        <div class="gradient-overlay"></div>
+    </div>
+
+    <!-- Modern Header -->
+    <header class="modern-header">
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <div class="logo-wrapper">
+                    <img src="assets/logo-sila.png" alt="صلة - Sila" class="logo-image">
+                    <h1 class="brand-text">صلة</h1>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-ar="الرئيسية" data-en="Home">
+                    <i class="fas fa-home"></i>
+                    <span>الرئيسية</span>
+                </a>
+                <a href="#features" class="nav-link" data-ar="المميزات" data-en="Features">
+                    <i class="fas fa-star"></i>
+                    <span>المميزات</span>
+                </a>
+                <a href="#about" class="nav-link" data-ar="حول" data-en="About">
+                    <i class="fas fa-info-circle"></i>
+                    <span>حول</span>
+                </a>
+                <a href="#contact" class="nav-link" data-ar="اتصل بنا" data-en="Contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>اتصل بنا</span>
+                </a>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="control-btn language-toggle" onclick="toggleLanguage()">
+                    <i class="fas fa-globe"></i>
+                    <span data-ar="English" data-en="العربية">English</span>
+                </button>
+                <button class="control-btn theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" onclick="toggleMobileSidebar()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <img src="assets/logo-sila.png" alt="صلة - Sila" class="sidebar-logo">
+                <h3 class="sidebar-brand-text">صلة</h3>
+            </div>
+            <button class="sidebar-close" onclick="toggleMobileSidebar()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-nav">
+                <a href="#home" class="sidebar-link" onclick="toggleMobileSidebar()">
+                    <i class="fas fa-home"></i>
+                    <span data-ar="الرئيسية" data-en="Home">الرئيسية</span>
+                </a>
+                <a href="#features" class="sidebar-link" onclick="toggleMobileSidebar()">
+                    <i class="fas fa-star"></i>
+                    <span data-ar="المميزات" data-en="Features">المميزات</span>
+                </a>
+                <a href="#about" class="sidebar-link" onclick="toggleMobileSidebar()">
+                    <i class="fas fa-info-circle"></i>
+                    <span data-ar="حول" data-en="About">حول</span>
+                </a>
+                <a href="#contact" class="sidebar-link" onclick="toggleMobileSidebar()">
+                    <i class="fas fa-envelope"></i>
+                    <span data-ar="اتصل بنا" data-en="Contact">اتصل بنا</span>
+                </a>
+            </div>
+            <div class="sidebar-controls">
+                <button class="sidebar-btn language-toggle" onclick="toggleLanguage()">
+                    <i class="fas fa-globe"></i>
+                    <span data-ar="English" data-en="العربية">English</span>
+                </button>
+                <button class="sidebar-btn theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                    <span data-ar="المظهر" data-en="Theme">المظهر</span>
+                </button>
+                <button class="sidebar-btn translation-btn" onclick="openTranslationModal(); toggleMobileSidebar();">
+                    <i class="fas fa-camera"></i>
+                    <span data-ar="ابدأ الترجمة" data-en="Start Translation">ابدأ الترجمة</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleMobileSidebar()"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-blobs">
+                <div class="blob b1"></div>
+                <div class="blob b2"></div>
+                <div class="blob b3"></div>
+            </div>
+            <div class="cursor-glow" aria-hidden="true"></div>
+            <div class="simple-bg">
+                <div class="shape-dot d1"></div>
+                <div class="shape-dot d2"></div>
+                <div class="shape-dot d3"></div>
+                <div class="shape-dot d4"></div>
+            </div>
+            <div class="brand-circles">
+                <div class="brand-circle c1"></div>
+                <div class="brand-circle c2"></div>
+                <div class="brand-circle c3"></div>
+            </div>
+            <div class="hero-content">
+                <!-- Enhanced Left Info Box -->
+                <div class="hero-left-box">
+                    <div class="enhanced-info-box">
+                        <div class="info-header">
+                            <div class="info-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3 data-ar="ذكاء اصطناعي متقدم" data-en="Advanced AI">ذكاء اصطناعي متقدم</h3>
+                        </div>
+                        
+                        <div class="info-content">
+                            <div class="info-item">
+                                <div class="item-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="item-text">
+                                    <h4 data-ar="رؤية حاسوبية" data-en="Computer Vision">رؤية حاسوبية</h4>
+                                    <p data-ar="تحديد دقيق لحركات اليد والأصابع" data-en="Accurate detection of hand and finger movements">تحديد دقيق لحركات اليد والأصابع</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="item-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <div class="item-text">
+                                    <h4 data-ar="معالجة فورية" data-en="Real-time Processing">معالجة فورية</h4>
+                                    <p data-ar="ترجمة فورية في أقل من ثانية" data-en="Instant translation in under a second">ترجمة فورية في أقل من ثانية</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="item-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="item-text">
+                                    <h4 data-ar="خصوصية كاملة" data-en="Complete Privacy">خصوصية كاملة</h4>
+                                    <p data-ar="معالجة محلية بدون إنترنت" data-en="Local processing, no internet needed">معالجة محلية بدون إنترنت</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="item-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="item-text">
+                                    <h4 data-ar="دعم شامل" data-en="Comprehensive Support">دعم شامل</h4>
+                                    <p data-ar="جميع أحرف الأبجدية العربية" data-en="All Arabic alphabet characters">جميع أحرف الأبجدية العربية</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                
+                <div class="hero-text">
+                    <div class="title-container">
+                        <h1 class="main-title">
+                            <span class="title-line" data-ar="ترجمة" data-en="Smart">ترجمة</span>
+                            <span class="title-line highlight" data-ar="ذكية" data-en="Translation">ذكية</span>
+                        </h1>
+                        <h2 class="subtitle" data-ar="لغة الإشارة العربية" data-en="Arabic Sign Language">
+                            لغة الإشارة العربية
+                        </h2>
+                    </div>
+                    
+                    <p class="hero-description" data-ar="منصة ذكية تترجم لغة الإشارة العربية إلى نص عربي مباشر باستخدام الكاميرا والذكاء الاصطناعي" data-en="A smart platform that translates Arabic sign language into live Arabic text using camera and artificial intelligence">
+                        منصة ذكية تترجم لغة الإشارة العربية إلى نص عربي مباشر باستخدام الكاميرا والذكاء الاصطناعي
+                    </p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="97">0</div>
+                            <div class="stat-label" data-ar="دقة الترجمة" data-en="Accuracy">دقة الترجمة</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="10">0</div>
+                            <div class="stat-label" data-ar="آلاف مستخدم" data-en="K Users">آلاف مستخدم</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="24">0</div>
+                            <div class="stat-label" data-ar="ساعة دعم" data-en="Hour Support">ساعة دعم</div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-primary btn-glow" onclick="openTranslationModal()">
+                            <div class="btn-content">
+                                <i class="fas fa-camera"></i>
+                                <span data-ar="ابدأ الترجمة" data-en="Start Translation">ابدأ الترجمة</span>
+                            </div>
+                            <div class="btn-glow-effect"></div>
+                        </button>
+                        <button class="btn btn-secondary btn-hover" onclick="scrollToSection('features')">
+                            <i class="fas fa-play"></i>
+                            <span data-ar="شاهد العرض" data-en="Watch Demo">شاهد العرض</span>
+                        </button>
+                    </div>
+                </div>
+                
+
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+                <span data-ar="اكتشف المزيد" data-en="Discover More">اكتشف المزيد</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-ar="المميزات الرائعة" data-en="Amazing Features">المميزات الرائعة</h2>
+                <p class="section-subtitle" data-ar="اكتشف كيف يمكن لصلة أن تغير طريقة التواصل" data-en="Discover how Sila can change the way we communicate">
+                    اكتشف كيف يمكن لصلة أن تغير طريقة التواصل
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3 class="feature-title" data-ar="ترجمة فورية" data-en="Real-time Translation">ترجمة فورية</h3>
+                    <p class="feature-description" data-ar="ترجمة مباشرة للغة الإشارة العربية باستخدام كاميرا هاتفك" data-en="Real-time translation of Arabic sign language using your phone's camera">
+                        ترجمة مباشرة للغة الإشارة العربية باستخدام كاميرا هاتفك
+                    </p>
+                    <div class="feature-hover">
+                        <div class="hover-content">
+                            <i class="fas fa-rocket"></i>
+                            <span data-ar="جرب الآن" data-en="Try Now">جرب الآن</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3 class="feature-title" data-ar="ذكاء اصطناعي متقدم" data-en="Advanced AI">ذكاء اصطناعي متقدم</h3>
+                    <p class="feature-description" data-ar="تقنيات الذكاء الاصطناعي الأحدث لضمان دقة الترجمة" data-en="Latest AI technologies to ensure translation accuracy">
+                        تقنيات الذكاء الاصطناعي الأحدث لضمان دقة الترجمة
+                    </p>
+                    <div class="feature-hover">
+                        <div class="hover-content">
+                            <i class="fas fa-magic"></i>
+                            <span data-ar="اكتشف" data-en="Discover">اكتشف</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3 class="feature-title" data-ar="سهولة الاستخدام" data-en="Easy to Use">سهولة الاستخدام</h3>
+                    <p class="feature-description" data-ar="واجهة بسيطة وحديثة تعمل على جميع الأجهزة" data-en="Simple and modern interface that works on all devices">
+                        واجهة بسيطة وحديثة تعمل على جميع الأجهزة
+                    </p>
+                    <div class="feature-hover">
+                        <div class="hover-content">
+                            <i class="fas fa-heart"></i>
+                            <span data-ar="أحبها" data-en="Love It">أحبها</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3 class="feature-title" data-ar="تواصل شامل" data-en="Inclusive Communication">تواصل شامل</h3>
+                    <p class="feature-description" data-ar="يربط بين الصم والناطقين بسهولة" data-en="Connects the deaf and hearing communities easily">
+                        يربط بين الصم والناطقين بسهولة
+                    </p>
+                    <div class="feature-hover">
+                        <div class="hover-content">
+                            <i class="fas fa-hands-helping"></i>
+                            <span data-ar="تواصل" data-en="Connect">تواصل</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3 class="feature-title" data-ar="خصوصية وأمان" data-en="Privacy & Security">خصوصية وأمان</h3>
+                    <p class="feature-description" data-ar="حماية كاملة لبياناتك وخصوصيتك" data-en="Complete protection of your data and privacy">
+                        حماية كاملة لبياناتك وخصوصيتك
+                    </p>
+                    <div class="feature-hover">
+                        <div class="hover-content">
+                            <i class="fas fa-lock"></i>
+                            <span data-ar="آمن" data-en="Secure">آمن</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3 class="feature-title" data-ar="متاح في كل مكان" data-en="Available Everywhere">متاح في كل مكان</h3>
+                    <p class="feature-description" data-ar="يعمل عبر الإنترنت أو بدون اتصال" data-en="Works online or offline">
+                        يعمل عبر الإنترنت أو بدون اتصال
+                    </p>
+                    <div class="feature-hover">
+                        <div class="hover-content">
+                            <i class="fas fa-wifi"></i>
+                            <span data-ar="متصل" data-en="Connected">متصل</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-ar="فريق العمل" data-en="Our Team">فريق العمل</h2>
+                <p class="section-subtitle" data-ar="انقر على العضو  لعرض نبذة عنه وحساب التواصل" data-en="Click on a member to view their bio and contact info">
+                    انقر على العضو  لعرض نبذة عنه وحساب التواصل
+                </p>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Team Member 1: Ahmed Alrasheed -->
+                <div class="team-card" onclick="openTeamPopup(0)">
+                    <div class="team-photo">
+                        <img src="assets/ahmed_photo.jpeg" alt="أحمد الرشيد">
+                        <div class="photo-overlay">
+                            <button class="expand-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="team-name">AHMED ALRASHEED</h3>
+                </div>
+
+                <!-- Team Member 2: Amirah Aldajani -->
+                <div class="team-card" onclick="openTeamPopup(1)">
+                    <div class="team-photo">
+                        <img src="assets/Amirah_logo.jpeg" alt="أميرة الدعجاني">
+                        <div class="photo-overlay">
+                            <button class="expand-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="team-name">AMIRAH ALDAJANI</h3>
+                </div>
+
+                <!-- Team Member 3: Tarfah Aldosari -->
+                <div class="team-card" onclick="openTeamPopup(2)">
+                    <div class="team-photo">
+                        <img src="assets/tarfah_logo.jpeg" alt="طرفة الدوسري">
+                        <div class="photo-overlay">
+                            <button class="expand-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="team-name">TARFAH ALDOSARI</h3>
+                </div>
+
+                <!-- Team Member 4: Saleh Alwakeel -->
+                <div class="team-card" onclick="openTeamPopup(3)">
+                    <div class="team-photo">
+                        <img src="assets/saleh_photoi.jpeg" alt="صالح الوكيل">
+                        <div class="photo-overlay">
+                            <button class="expand-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="team-name">SALEH ALWAKEEL</h3>
+                </div>
+
+                <!-- Team Member 5: Saud Bin Samhan -->
+                <div class="team-card" onclick="openTeamPopup(4)">
+                    <div class="team-photo">
+                        <img src="assets/saud_photo.JPG" alt="سعود بن سمحان">
+                        <div class="photo-overlay">
+                            <button class="expand-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="team-name">SAUD BIN SAMHAN</h3>
+                </div>
+
+                <!-- Team Member 6: Maan Halwani -->
+                <div class="team-card" onclick="openTeamPopup(5)">
+                    <div class="team-photo">
+                        <img src="assets/maan_photo.jpeg" alt="معن حلواني">
+                        <div class="photo-overlay">
+                            <button class="expand-btn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="team-name">MAAN HALWANI</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title" data-ar="حول صلة" data-en="About Sila">حول صلة</h2>
+                    <p class="about-description" data-ar="صلة هي منصة رائدة في مجال ترجمة لغة الإشارة العربية، مصممة لتسهيل التواصل بين الصم والناطقين. باستخدام أحدث تقنيات الذكاء الاصطناعي، نقدم حلولاً مبتكرة ومتطورة." data-en="Sila is a leading platform in Arabic sign language translation, designed to facilitate communication between the deaf and hearing communities. Using the latest AI technologies, we provide innovative and advanced solutions.">
+                        صلة هي منصة رائدة في مجال ترجمة لغة الإشارة العربية، مصممة لتسهيل التواصل بين الصم والناطقين. باستخدام أحدث تقنيات الذكاء الاصطناعي، نقدم حلولاً مبتكرة ومتطورة.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number" data-count="97.4">0</div>
+                            <div class="stat-label" data-ar="دقة الترجمة" data-en="Translation Accuracy">دقة الترجمة</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="10">0</div>
+                            <div class="stat-label" data-ar="مستخدم نشط" data-en="Active Users">مستخدم نشط</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="24">0</div>
+                            <div class="stat-label" data-ar="دعم فني متواصل" data-en="Continuous Support">دعم متواصل</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-hands"></i>
+                        </div>
+                        <div class="floating-icons">
+                            <div class="floating-icon">🤟</div>
+                            <div class="floating-icon">👋</div>
+                            <div class="floating-icon">✌️</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</h2>
+                <p class="section-subtitle" data-ar="نحن هنا لمساعدتك" data-en="We're here to help">
+                    نحن هنا لمساعدتك
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</h3>
+                            <p><a href="mailto:Sila.info0@gmail.com" data-ar="Sila.info0@gmail.com" data-en="Sila.info0@gmail.com">Sila.info0@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-ar="الهاتف" data-en="Phone">الهاتف</h3>
+                            <p><a href="tel:0509688559" data-ar="0509688559" data-en="+966 50 968 8559">0509688559</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-ar="العنوان" data-en="Address">العنوان</h3>
+                            <p data-ar="الرياض، المملكة العربية السعودية" data-en="Riyadh, Saudi Arabia">الرياض، المملكة العربية السعودية</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="الاسم" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="البريد الإلكتروني" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="رسالتك" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow">
+                            <div class="btn-content">
+                                <i class="fas fa-paper-plane"></i>
+                                <span data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</span>
+                            </div>
+                            <div class="btn-glow-effect"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Footer -->
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-wrapper">
+                        <img src="assets/logo-sila.png" alt="صلة - Sila" class="footer-logo-image">
+                        <h3 class="brand-text">صلة</h3>
+                    </div>
+                    <p data-ar="منصة التواصل الذكية للجميع" data-en="Smart Communication Platform for Everyone">
+                        منصة التواصل الذكية للجميع
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+                        <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+                        <a href="#features" data-ar="المميزات" data-en="Features">المميزات</a>
+                        <a href="#about" data-ar="حول" data-en="About">حول</a>
+                        <a href="#contact" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4 data-ar="الدعم" data-en="Support">الدعم</h4>
+                        <a href="#" data-ar="المساعدة" data-en="Help">المساعدة</a>
+                        <a href="#" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</a>
+                        <a href="#" data-ar="الدليل" data-en="Guide">الدليل</a>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4 data-ar="تابعنا" data-en="Follow Us">تابعنا</h4>
+                        <div class="social-links">
+                            <a href="https://wa.me/966509688559" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://x.com/sila_hub?s=21" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="http://linkedin.com/in/sila-%D8%B5%D9%84%D8%A9-8bbaa2382" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 صلة. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modern Translation Modal -->
+    <div id="translationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-ar="ترجمة لغة الإشارة" data-en="Sign Language Translation">ترجمة لغة الإشارة</h3>
+                <button class="modal-close" onclick="closeTranslationModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="camera-container">
+                    <video id="camera" autoplay muted></video>
+                    <div class="camera-overlay">
+                        <div class="camera-frame">
+                            <div class="frame-corner top-left"></div>
+                            <div class="frame-corner top-right"></div>
+                            <div class="frame-corner bottom-left"></div>
+                            <div class="frame-corner bottom-right"></div>
+                        </div>
+                        <div class="camera-instructions" data-ar="ضع يديك داخل الإطار" data-en="Place your hands inside the frame">
+                            ضع يديك داخل الإطار
+                        </div>
+                    </div>
+                </div>
+                <div class="translation-output">
+                    <div class="output-header">
+                        <div class="output-label" data-ar="الترجمة:" data-en="Translation:">الترجمة:</div>
+                        <div class="output-controls">
+                            <button class="speaker-btn" id="speakerBtn" onclick="toggleSpeech()" title="Text to Speech">
+                                <i class="fas fa-volume-up" id="speakerIcon"></i>
+                            </button>
+                            <div class="output-status">
+                                <div class="status-dot"></div>
+                                <span data-ar="مستعد" data-en="Ready">مستعد</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="output-text" id="translationText" data-ar="في انتظار الإشارة..." data-en="Waiting for sign...">
+                        في انتظار الإشارة...
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeTranslationModal()">
+                    <span data-ar="إغلاق" data-en="Close">إغلاق</span>
+                </button>
+                <button class="btn btn-primary btn-glow" onclick="startTranslation()">
+                    <div class="btn-content">
+                        <i class="fas fa-play"></i>
+                        <span data-ar="بدء الترجمة" data-en="Start Translation">بدء الترجمة</span>
+                    </div>
+                    <div class="btn-glow-effect"></div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
